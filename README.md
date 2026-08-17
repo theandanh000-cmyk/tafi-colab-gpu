@@ -1,14 +1,9 @@
-# TaFi Video Studio — GPU Editions (Colab / Kaggle)
+# TaFi Video Studio
 
-Pipeline GPU miễn phí: dịch xKiro + ASR SenseVoice CUDA + OCR PP-OCRv5 + render h264_nvenc + CapCut TTS.
+Web + pipeline chạy **CPU** trên máy thường (không cần GPU):
+- Bước 1/2: tải video (yt-dlp/BBDown/lux) + ASR JianYing cloud (fallback bcut) trích phụ đề Trung
+- Bước 5: dịch Trung → Việt bằng **xKiro** (Qwen3.8 Max) + QC chính tả (DeepSeek V4 Pro)
+- Bước 6: lồng tiếng **CapCut** duy nhất — giọng Nhỏ Ngọt Ngào ×1.30
+- Bước 8: render FFmpeg (libx264) + che mờ chữ đè
 
-## Kaggle (khuyên dùng — free ~30h/tuần, T4/P100)
-1. Vào https://www.kaggle.com/code → New Notebook → File ▸ Upload Notebook → chọn `tafi-kaggle-gpu.ipynb`.
-2. Settings: Accelerator = GPU (T4 x2 / P100), Internet = ON.
-3. Runtime ▸ Run all. Copy link web in ở cell 6 (https://xxx.trycloudflare.com).
-
-## Google Colab
-1. Mở https://colab.research.google.com/github/theandanh000-cmyk/tafi-colab-gpu/blob/main/tafi-colab-gpu.ipynb
-2. Runtime ▸ Run all. Copy link web in ở cell 7.
-
-File `TaFi-VS-Tool-Web.zip` (code đầy đủ) cũng nằm trong repo này.
+File đầy đủ: `TaFi-VS-Tool-Web.zip` (giải nén → `cd TaFi-VS-Tool-Web && node server.js` → mở http://localhost:3000).
